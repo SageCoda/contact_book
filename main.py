@@ -69,7 +69,21 @@ def addContacts(contact_str: str):
     contact[number] = name
     print("========= Contact Added Succecssfully ==========")
 
+def updateContact(number):
+    if number in contact:
+        new_name = input("Enter the new name for the contact: ")
+        contact[number] = new_name
+        print("========= Contact Updated Successfully ==========")
+    else:
+        print("Contact does not exist in our contact book")
 
+def deleteContact(number):
+    if number in contact:
+        del contact[number]
+        print("========= Contact Deleted Successfully ==========")
+    else:
+        print("Contact does not exist in our contact book")
+        
 def searchContacts(number:str):
     record= contact.get(number,None)
     if not record:
